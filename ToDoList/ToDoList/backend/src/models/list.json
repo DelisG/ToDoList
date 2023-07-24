@@ -1,0 +1,12 @@
+[
+  {
+    "description": "Congresso mongo db",
+    "date": "26/07/2023",
+    "hours":"14:00"
+  },
+  {
+    "description": "Congresso Código limpo",
+    "date": "16/07/2023",
+    "hours": "18:00"
+}
+] 
