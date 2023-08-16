@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="src/view/style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous">
+        <script defer src="src/view/script.js"></script>
+    </head>
+    <body class="bg-light">
+        <div class=" row m-3">
+            <div class="col-md-8 card m-2 p-3 mx-auto">
+                <h3 class="text-secondary">Lista de Tarefas</h3>
+                <table class="table table-striped table-secondary">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-secondary">A fazer</th>
+                            <th scope="col" class="text-secondary">Data</th>
+                            <th scope="col" class="text-secondary">Horário</th>
+                            <th scope="col" class="text-secondary"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-de-tarefas">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-8 card m-2 p-3 mx-auto">
+                <form onsubmit="return false;" class="row">
+                    <h3 class="text-secondary">Adicionar tarefa</h3>
+                    <input type="text" id="description"
+                        placeholder="Descrição da tarefa"
+                        class="form-control"
+                        aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg">
+                    <input type="date" id="data" name="id"
+                        class="form-control col-5">
+                    <input type="time" id="hora" class="form-control col-5">
+                    <button id="botao-add-tarefa" class="btn btn-secondary ">Adicionar
+                        Tarefa</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
