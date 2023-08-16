@@ -1,56 +1,51 @@
-const listaDeTarefa = document.getElementById("lista-de-tarefas");
-const addTaskBtn = document.getElementById("botao-add-tarefa");
-const input_description = document.getElementById("description");
+const lista_tarefas = document.getElementById("lista-de-tarefas");
+const botao_add_tarefas = document.getElementById("botao-add-tarefa");
+const input_descricao = document.getElementById("descricao");
 const input_hora = document.getElementById("hora");
 const input_data = document.getElementById("data");
 
-async function fetchTasks() {
+async function fetchTarefas() {
   const response = await fetch("http://localhost:2727/lists");
-  const tasks = await response.json();
-  return tasks;
+  const tarefas = await response.json();
+  return tarefas;
 }
 
-function renderTasks(tasks) {
-  listaDeTarefa.innerHTML = "";
+function renderizarTarefas(tarefas) {
+  lista_tarefas.innerHTML = "";
 
-  tasks.forEach((task) => {
+  tarefas.forEach((tarefa) => {
     const row = document.createElement("tr");
 
-    // Create a cell for description
-    const descriptionCell = document.createElement("td");
-    descriptionCell.textContent = task.description;
-    row.appendChild(descriptionCell);
+    const campoDescricao = document.createElement("td");
+    campoDescricao.textContent = tarefa.descricao;
+    row.appendChild(campoDescricao);
 
-    // Create a cell for date
-    const dateCell = document.createElement("td");
-    dateCell.textContent = task.date;
-    row.appendChild(dateCell);
+    const campoData = document.createElement("td");
+    campoData.textContent = tarefa.data;
+    row.appendChild(campoData);
 
-    // Create a cell for hours
-    const hoursCell = document.createElement("td");
-    hoursCell.textContent = task.hours;
-    row.appendChild(hoursCell);
+    const campoHora = document.createElement("td");
+    campoHora.textContent = tarefa.hora;
+    row.appendChild(campoHora);
 
-    // Create a cell for delete button
-    const deleteCell = document.createElement("td");
+    const deleteCelula = document.createElement("td");
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Excluir";
-    deleteButton.classList.add("btn", "btn-outline-dark", "btn-sm"); // Adicione a classe "btn btn-secondary"
+    deleteButton.textContent = "x";
+    deleteButton.classList.add("btn", "btn-outline-secondary", "btn-sm");
     deleteButton.addEventListener("click", async () => {
-      await deleteTask(task._id); // Use a propriedade correta para o ID da tarefa
-      init(); // Após a exclusão, renderize novamente as tarefas
+      await deleteTarefa(tarefa._id);
+      init();
     });
-    deleteCell.appendChild(deleteButton);
-    row.appendChild(deleteCell);
+    deleteCelula.appendChild(deleteButton);
+    row.appendChild(deleteCelula);
 
-    // Append the completed row to the table
-    listaDeTarefa.appendChild(row);
+    lista_tarefas.appendChild(row);
   });
 }
 
-async function deleteTask(taskId) {
+async function deleteTarefa(tarefaId) {
   try {
-    const response = await fetch(`http://localhost:2727/lists/${taskId}`, {
+    const response = await fetch(`http://localhost:2727/lists/${tarefaId}`, {
       method: "DELETE",
     });
 
@@ -58,31 +53,28 @@ async function deleteTask(taskId) {
       throw new Error("Erro ao excluir a tarefa");
     }
 
-    const deletedTask = await response.json();
-    return deletedTask;
+    const tarefaDeletada = await response.json();
+    return tarefaDeletada;
   } catch (error) {
     console.error(error);
     throw error;
   }
 }
 
-// Função para formatar a data no formato dd/mm/aaaa
-function formatDate(date) {
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const year = date.getFullYear();
+function formatacaoDaData(data) {
+  const day = data.getDate().toString().padStart(2, "0");
+  const month = (data.getMonth() + 1).toString().padStart(2, "0");
+  const year = data.getFullYear();
   return `${day}/${month}/${year}`;
 }
 
-// Função para adicionar uma tarefa com a data formatada corretamente
-async function addTask(description, date, hours) {
-  // Convertendo a data para o formato correto antes de enviar
-  const formattedDate = formatDate(new Date(date));
+async function addtarefa(descricao, data, hora) {
+  const dataFormatada = formatacaoDaData(new Date(data));
 
-  var raw = JSON.stringify({
-    description: description,
-    date: formattedDate,
-    hours: hours,
+  let raw = JSON.stringify({
+    descricao: descricao,
+    data: dataFormatada,
+    hora: hora,
   });
 
   const response = await fetch("http://localhost:2727/lists", {
@@ -93,27 +85,26 @@ async function addTask(description, date, hours) {
     body: raw,
   });
 
-  const newTask = await response.json();
-  return newTask;
+  const novaTarefa = await response.json();
+  return novaTarefa;
 }
 
-addTaskBtn.addEventListener("click", async () => {
-  const description = input_description.value.trim();
+botao_add_tarefas.addEventListener("click", async () => {
+  const descricao = input_descricao.value.trim();
   const data = input_data.value.trim();
   const hora = input_hora.value.trim();
-  if (description) {
-    const newTask = await addTask(description, data, hora);
-    //renderTasks([newTask]);
+  if (descricao) {
+    const novaTarefa = await addtarefa(descricao, data, hora);
+    //renderizarTarefas([novaTarefa]);
     init();
-    input_description.value = "";
+    input_descricao.value = "";
   }
 });
 
-// Configuração inicial quando a página carrega
 async function init() {
   try {
-    const tasks = await fetchTasks();
-    renderTasks(tasks);
+    const tarefas = await fetchTarefas();
+    renderizarTarefas(tarefas);
   } catch (error) {
     console.error("Erro ao carregar tarefas:", error);
   }
