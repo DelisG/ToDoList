@@ -14,7 +14,7 @@ app.use("/lists", lists);
 
 db.on("error", console.log.bind(console, "Erro de conexão"));
 db.once("open", () => {
-  console.log(chalk.blue.bgGreen.bold("Conexão com o banco feita com sucesso"));
+  console.log(chalk.blue.bgMagenta.bold("Conexão com o banco feita com sucesso"));
 });
 
 export default app;
