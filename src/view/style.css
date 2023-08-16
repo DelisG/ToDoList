@@ -1,0 +1,66 @@
+/* Estilos para o corpo da página */
+body {
+    background-color: #f7f7f7;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para o cabeçalho */
+h3.text-secondary {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a tabela de tarefas */
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+    background-color: #f7f7f7;
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+}
+
+/* Estilos para os campos de entrada e botões */
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: #6c757d;
+    box-shadow: none;
+}
+
+.btn {
+    border-radius: 4px;
+}
+.btn:hover{
+    background-color: pink;
+}
+
+/* Estilos para o formulário */
+.form-row {
+    margin-bottom: 15px;
+}
+
+/* Estilos para o botão Adicionar Tarefa */
+#botao-add-tarefa {
+    /* width: 100%; */
+}
+
+/* Estilos para a área do formulário */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o contêiner dos elementos */
+.row {
+    margin: 0;
+}
