@@ -1,12 +1,12 @@
 [
   {
-    "description": "Congresso mongo db",
-    "date": "26/07/2023",
-    "hours":"14:00"
+    "descricao": "Congresso mongo db",
+    "data": "26/07/2023",
+    "hora": "14:00"
   },
   {
-    "description": "Congresso Código limpo",
-    "date": "16/07/2023",
-    "hours": "18:00"
-}
-] 
+    "descricao": "Congresso Código limpo",
+    "data": "16/07/2023",
+    "hora": "18:00"
+  }
+]
