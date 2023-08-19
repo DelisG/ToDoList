@@ -5,7 +5,8 @@ const input_hora = document.getElementById("hora");
 const input_data = document.getElementById("data");
 
 async function fetchTarefas() {
-  const response = await fetch("http://localhost:2727/lists");
+  // const response = await fetch("http://localhost:2727/lists");
+  const response = await fetch("src/models/list.json");
   const tarefas = await response.json();
   return tarefas;
 }
@@ -14,24 +15,28 @@ function renderizarTarefas(tarefas) {
   lista_tarefas.innerHTML = "";
 
   tarefas.forEach((tarefa) => {
-    const row = document.createElement("tr");
+    const row = document.createElement("div");
+    row.classList.add("div-itens");
 
-    const campoDescricao = document.createElement("td");
+    const campoDescricao = document.createElement("p");
     campoDescricao.textContent = tarefa.descricao;
+    row.classList.add("tarefa");
     row.appendChild(campoDescricao);
 
-    const campoData = document.createElement("td");
+    const campoData = document.createElement("p");
     campoData.textContent = tarefa.data;
+    row.classList.add("data");
     row.appendChild(campoData);
 
-    const campoHora = document.createElement("td");
+    const campoHora = document.createElement("p");
     campoHora.textContent = tarefa.hora;
+    row.classList.add("hora");
     row.appendChild(campoHora);
 
-    const deleteCelula = document.createElement("td");
+    const deleteCelula = document.createElement("section");
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "x";
-    deleteButton.classList.add("btn", "btn-outline-secondary", "btn-sm");
+    deleteButton.classList.add("botao");
     deleteButton.addEventListener("click", async () => {
       await deleteTarefa(tarefa._id);
       init();
@@ -68,7 +73,7 @@ function formatacaoDaData(data) {
   return `${day}/${month}/${year}`;
 }
 
-async function addtarefa(descricao, data, hora) {
+async function addTarefa(descricao, data, hora) {
   const dataFormatada = formatacaoDaData(new Date(data));
 
   let raw = JSON.stringify({
@@ -94,7 +99,7 @@ botao_add_tarefas.addEventListener("click", async () => {
   const data = input_data.value.trim();
   const hora = input_hora.value.trim();
   if (descricao) {
-    const novaTarefa = await addtarefa(descricao, data, hora);
+    const novaTarefa = await addTarefa(descricao, data, hora);
     //renderizarTarefas([novaTarefa]);
     init();
     input_descricao.value = "";

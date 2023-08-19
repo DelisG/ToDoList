@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Lista de Tarefas</title>
         <link rel="stylesheet" href="src/view/style.css">
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -11,39 +11,83 @@
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous">
         <script defer src="src/view/script.js"></script>
+        <link rel="icon"
+            href="https://img.freepik.com/icones-gratis/caderno_318-206145.jpg"
+            type="imgimage/x-icon">
     </head>
-    <body class="bg-light">
-        <div class="row m-5">
-            <div class="col-md-8 card mx-auto">
-                <h3 class="text-secondary">Lista de Tarefas</h3>
-                <table class="table table-striped table-secondary">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-secondary">A fazer</th>
-                            <th scope="col" class="text-secondary">Data</th>
-                            <th scope="col" class="text-secondary">Horário</th>
-                            <th scope="col" class="text-secondary"></th>
-                        </tr>
-                    </thead>
-                    <tbody id="lista-de-tarefas">
-                    </tbody>
-                </table>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a class="navbar-brand" href="index.html">
+                    <img
+                        src="https://img.freepik.com/icones-gratis/caderno_318-206145.jpg"
+                        alt class="img-logo">
+                </a>
+            </nav>
+        </header>
+        <main class="div-body">
+            <div class="row m-5">
+                <div class="col-md-6 mx-auto div-listas">
+                    <h3 class="text-center ">Lista de Tarefas</h3>
+                       <div id="lista-de-tarefas"></div>                       
+                    
+                </div>
+
+                <div class="col-md-3">
+                    <form onsubmit="return false;" class="row div-add p-3">
+                        <h3 class="mx-auto">Adicionar tarefa</h3>
+                        <input type="date" id="data" name="id"
+                            class="col-6">
+                        <input type="time" id="hora" class=" col-5">
+                        <input type="text" id="descricao"
+                            placeholder="Descrição da tarefa"
+                            class="col-8"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-lg">
+                        <button id="botao-add-tarefa"
+                            class="text-dark col-3 botao">Enviar</button>
+                    </form>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <img
+                            src="https://gifs.eco.br/wp-content/uploads/2022/07/gifs-de-anotando-2.gif"
+                            alt class="img-gif">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3">
-                <form onsubmit="return false;" class="row card p-3">
-                    <h3 class="text-secondary mx-auto">Adicionar tarefa</h3>
-                    <input type="text" id="descricao"
-                        placeholder="Descrição da tarefa"
-                        class="form-control"
-                        aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-lg">
-                    <input type="date" id="data" name="id"
-                        class="form-control col-5">
-                    <input type="time" id="hora" class="form-control col-5">
-                    <button id="botao-add-tarefa"
-                        class="btn btn-secondary mx-auto">Adicionar Tarefa</button>
-                </form>
+        </main>
+        <footer>
+            <div class="container">
+                <div
+                    class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-12 text-center">
+                        <p>© 2023 - Todos os direitos reservados</p>
+                    </div>
+                    <ul class="rodape">
+                        <li><a
+                                href="https://www.linkedin.com/in/delisguerra/"
+                                target="_blank" title="linkedin"><img
+                                    class="icone-redes-sociais"
+                                    alt="linkedin"
+                                    src="https://cdn-icons-png.flaticon.com/512/49/49408.png"></a></li>
+                        <li><a href="https://twitter.com/delisssz"
+                                target="_blank" title="Twitter"><img
+                                    class="icone-redes-sociais"
+                                    alt="Twitter"
+                                    src="https://cdn.icon-icons.com/icons2/2428/PNG/512/twitter_black_logo_icon_147062.png"></a></li>
+                        <li><a title="instagram" target="_blank"
+                                href="https://www.instagram.com/delisz/"><img
+                                    class="icone-redes-sociais"
+                                    alt="instagram"
+                                    src="https://cdn-icons-png.flaticon.com/512/2175/2175198.png"></a></li>
+                        <li><a href="https://github.com/delisg"
+                                target="_blank"
+                                title="github"><img
+                                    class="icone-redes-sociais"
+                                    alt="Github"
+                                    src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </footer>
     </body>
 </html>

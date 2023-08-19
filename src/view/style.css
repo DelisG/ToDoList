@@ -1,66 +1,161 @@
-/* Estilos para o corpo da página */
-body {
-    background-color: #f7f7f7;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+.div-body {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  background-color: white;
+  /* font-family: sansita; */
+}
+.div-icone {
+  /* background-image: url("https://w7.pngwing.com/pngs/106/632/png-transparent-mathematics-drawing-homework-test-tickets-s-text-hand-monochrome.png"); */
+}
+.botao {
+  background-color: #fad219;
+  border: 3px solid black;
+  border-radius: 7px;
+  box-shadow: 4px 4px black;
+  transition: background-color 0.4s, color 0.3s;
 }
 
-/* Estilos para o cabeçalho */
-h3.text-secondary {
-    font-size: 24px;
-    margin-bottom: 20px;
+button:enabled:hover {
+  background-color: #d1a627;
+  border: 3px solid black;
+  transition: background-color 0.7s, color 0.3s;
 }
 
-/* Estilos para a tabela de tarefas */
-.table {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#botao-enviar {
+  background-color: #fad219;
+  border: 3px solid black;
+  border-radius: 7px;
+  box-shadow: 4px 4px black;
+  margin: 3px 3px;
 }
 
-.table th {
-    background-color: #f7f7f7;
-    border-top: none;
-    border-bottom: 1px solid #ddd;
-    font-weight: normal;
+#botao-enviar:enabled:hover {
+  background-color: #d1a627;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaço entre as divs */
 }
 
-/* Estilos para os campos de entrada e botões */
-.form-control {
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#descricao,
+#data,
+#hora {
+  background-color: #bfd9e9;
+  border: 3px solid black;
+  border-radius: 7px;
+  box-shadow: 4px 4px black;
+  margin: 3px 3px;
 }
 
-.form-control:focus {
-    border-color: #6c757d;
-    box-shadow: none;
+#descricao:hover,
+#data:hover,
+#hora:hover {
+  background-color: #80b4d3;
+  transition: background-color 0.5s, font-size 0.5s, color 0.3s;
+}
+.div-add {
+  align-items: center;
+  background-color: #e7e3f1;
+  border: 4px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px black;
+  color: #221f29;
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+  padding: 8px;
 }
 
-.btn {
-    border-radius: 4px;
+.div-itens {
+  align-items: center;
+  background-color: #bfd9e9;
+  border: 3px solid black;
+  border-radius: 7px;
+  box-shadow: 4px 4px black;
+  color: #342f3e;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  margin: 8px;
+  padding: 8px;
+  transition: background-color 0.5s, font-size 0.5s, color 0.3s;
 }
-.btn:hover{
-    background-color: pink;
+.div-itens:hover {
+  background-color: #80b4d3;
+  border: 3px solid black;
+  color: #221f29;
+  transition: background-color 0.5s, font-size 0.5s, color 0.3s;
+
+  /* font-size: 16.5px; */
 }
 
-/* Estilos para o formulário */
-.form-row {
-    margin-bottom: 15px;
+.div-itens p {
+  margin: 0;
 }
 
-/* Estilos para o botão Adicionar Tarefa */
-#botao-add-tarefa {
-    /* width: 100%; */
+.div-itens:first-child {
+  flex-grow: 2;
 }
 
-/* Estilos para a área do formulário */
-.card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+.div-listas {
+  align-items: center;
+  background-color: #e7e3f1;
+  border: 4px solid black;
+  border-radius: 13px;
+  box-shadow: 5px 5px black;
+  color: #26363f;
+  margin: 8px;
+  padding: 8px;
+  transition: background-color 0.5s, color 0.3s;
 }
 
-/* Estilos para o contêiner dos elementos */
-.row {
-    margin: 0;
+footer {
+  padding: 0px;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+}
+
+header,
+footer {
+  background-color: #cc9d10;
+  color: #513e06;
+  font-family: roboto, sans-serif;
+}
+
+.img-logo {
+  margin-left: 5px;
+  width: 65px;
+}
+
+.img-gif {
+  width: 17rem;
+  margin-top: 3rem;
+}
+
+ul.rodape li a {
+  display: block;
+  text-align: center;
+}
+
+.icone-redes-sociais {
+  width: 30px;
+}
+
+ul.rodape {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+ul.rodape li {
+  display: inline-block;
+  padding: 8px;
+  margin-left: 7px;
 }
