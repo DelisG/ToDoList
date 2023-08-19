@@ -8,4 +8,5 @@
 
 A aplicação oferece uma experiência de gerenciamento de tarefas, possibilitando aos usuários adicionar, excluir e visualizar suas tarefas diárias. Com a arquitetura MVC e a integração feita entre o frontend, backend e o banco de dados, garantimos um sistema ágil e responsivo, facilitando a organização e produtividade dos usuários.
 
-[:page_with_curl: Documentação técnica](documentacao.md)
+[:clapper: Ver Projeto no Browser](https://delisg.github.io/lista-de-tarefas/) <br>
+[:page_with_curl: Documentação técnica](documentacao.md) 
