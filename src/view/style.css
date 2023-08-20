@@ -62,7 +62,7 @@ button:enabled:hover {
 }
 .div-add {
   align-items: center;
-  background-color: #e7e3f1;
+  background-color: #f2f7fa;
   border: 4px solid black;
   border-radius: 10px;
   box-shadow: 5px 5px black;
@@ -106,7 +106,7 @@ button:enabled:hover {
 
 .div-listas {
   align-items: center;
-  background-color: #e7e3f1;
+  background-color: #f2f7fa;
   border: 4px solid black;
   border-radius: 13px;
   box-shadow: 5px 5px black;
@@ -125,8 +125,8 @@ footer {
 
 header,
 footer {
-  background-color: #cc9d10;
-  color: #513e06;
+  background-color: #c0c6c9;
+  color: #26363f;
   font-family: roboto, sans-serif;
 }
 
