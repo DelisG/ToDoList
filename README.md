@@ -1,6 +1,6 @@
-<p align="center">
+<!-- <p align="center">
   <img src="https://static.skillshare.com/uploads/discussion/tmp/60539f55" width="500" height="300" alt="Descrição da Imagem">
-</p>
+</p> -->
 
 <!-- [![Concluído](https://img.shields.io/badge/Status-Em%Construcao-de3163)](link_da_sua_sugestao) -->
 
